@@ -2,5 +2,14 @@
 // 1/21/20
 // CS202 UAF
 
-#include <iostream>;
-#include <vector>;
+#include "classname.h"
+
+int main()
+{
+	Lab2 test;
+	test;
+	test(20);
+
+
+
+}
