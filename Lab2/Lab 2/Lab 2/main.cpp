@@ -19,8 +19,8 @@ int main(int argc, const char** argv)
 	listofElements.push_back(1);
 	constructor.referenceToConst(2);
 	listofElements.push_back(1);
-	//constructor.reference(anything);
-	//listofElements.push_back(1);
+	constructorCopy.reference(listofElements);
+	listofElements.push_back(1);
 
 
 	cout << "# of Elements in this list: " << listofElements.size() << endl;

@@ -26,8 +26,8 @@ public:
 
 
 private:
-	int const labValue = 12;
-	int _cats, _dogs;
+	//int const labValue = 12;
+	int _cats =1;
 
 };
 

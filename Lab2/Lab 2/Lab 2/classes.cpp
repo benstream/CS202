@@ -3,6 +3,8 @@
 // CS202 UAF
 #include "classname.h"
 
+
+
 Lab2::Lab2() 
 {
 	cout << "calling default constructor" << endl;
@@ -35,7 +37,6 @@ void Lab2::reference(Lab2& _cats)
 
 void Lab2::referenceToConst(const Lab2& newValue) {
 	cout << "passed by reference to constant" << endl;
-	newValue;
 }
 
 
