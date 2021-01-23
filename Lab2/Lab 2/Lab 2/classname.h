@@ -12,9 +12,9 @@ class Lab2
 {
 public:
 	Lab2(); // default constructor
-	Lab2(const Lab2 &); //constructor copy
-	Lab2(const Lab2
-	~Lab2();// deconstructor
+	Lab2(const Lab2 &origin); //constructor copy
+	Lab2(int a); //second constructor
+	~Lab2();// destructor
 
 private:
 

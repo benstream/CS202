@@ -8,7 +8,7 @@ int main()
 {
 	Lab2 test;
 	test;
-	test(20);
+
 
 
 
