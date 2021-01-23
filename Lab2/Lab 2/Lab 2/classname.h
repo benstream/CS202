@@ -5,6 +5,8 @@
 
 using std::cout;
 using std::endl;
+using std::vector;
+
 
 
 class Lab2
@@ -14,9 +16,17 @@ public:
 	Lab2(const Lab2 &origin); //constructor copy
 	Lab2(int a); //second constructor
 	~Lab2();// destructor
+	
+	void byValue(Lab2 Lab2);
+	
+	void reference(Lab2& _cats);
+
+	void referenceToConst(const Lab2& Lab2); 
+
+
 
 private:
-
+	int const labValue = 12;
 	int _cats, _dogs;
 
 };

@@ -3,7 +3,8 @@
 // CS202 UAF
 #include "classname.h"
 
-Lab2::Lab2() {
+Lab2::Lab2() 
+{
 	cout << "calling default constructor" << endl;
 }
 Lab2::Lab2(const Lab2 &origin)
@@ -21,23 +22,20 @@ Lab2::~Lab2()
 	cout << "calling destructor" << endl;
 }
 
-void byValue(Lab2 Lab2)
+void Lab2::byValue(Lab2 Lab2)
 {
 	cout << "passed by value" << endl;
 }
 
-void reference(Lab2& Lab2)
+void Lab2::reference(Lab2& _cats)
 {
 	cout << "passed by reference" << endl;
+
 }
 
-void referenceToConst(const Lab2& Lab2) {
+void Lab2::referenceToConst(const Lab2& newValue) {
 	cout << "passed by reference to constant" << endl;
+	newValue;
 }
 
-void returnByValue() {
-	Lab2 labValue;
-	cout << "returned object from value" << endl;
-	return;
-}
 
