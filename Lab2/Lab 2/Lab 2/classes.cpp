@@ -36,10 +36,8 @@ void referenceToConst(const Lab2& Lab2) {
 }
 
 void returnByValue() {
-	Lab2 Lab2;
+	Lab2 labValue;
 	cout << "returned object from value" << endl;
-	return lab2;
+	return;
 }
 
-
-void 
