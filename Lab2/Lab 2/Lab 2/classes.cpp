@@ -29,7 +29,7 @@ void Lab2::byValue(Lab2 Lab2)
 	cout << "passed by value" << endl;
 }
 
-void Lab2::reference(Lab2& _cats)
+void Lab2::reference(Lab2& Lab2)
 {
 	cout << "passed by reference" << endl;
 
@@ -38,5 +38,6 @@ void Lab2::reference(Lab2& _cats)
 void Lab2::referenceToConst(const Lab2& newValue) {
 	cout << "passed by reference to constant" << endl;
 }
+
 
 

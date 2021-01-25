@@ -17,11 +17,11 @@ public:
 	Lab2(int a); //second constructor
 	~Lab2();// destructor
 	
-	void byValue(Lab2 Lab2);
+	void byValue(Lab2 Lab2); // pass by value
 	
-	void reference(Lab2& _cats);
+	void reference(Lab2& _cats); // pass by reference
 
-	void referenceToConst(const Lab2& Lab2); 
+	void referenceToConst(const Lab2& Lab2); // reference to const
 
 
 
