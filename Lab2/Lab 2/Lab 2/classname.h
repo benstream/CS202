@@ -1,11 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <memory>
+
 #ifndef CLASSNAME_H_
 #define CLASSNAME_H_
 
 using std::cout;
 using std::endl;
 using std::vector;
+
 
 
 
