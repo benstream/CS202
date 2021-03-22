@@ -19,11 +19,11 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stopwatch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stopwatch.h">
+    <ClInclude Include="stopwatch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
