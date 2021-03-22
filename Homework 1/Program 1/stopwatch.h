@@ -8,7 +8,7 @@ using std::endl;
 #ifndef STOPWATCH_H_
 #define STOPWATCH_H_
 
-class StopwWatch
+class StopWatch
 {
 public:
 	StopWatch(); //will start timer

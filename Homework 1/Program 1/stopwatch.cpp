@@ -1,19 +1,20 @@
 #include "stopwatch.h"
 
-StopwWatch::StopWatch()
+StopWatch::StopWatch()
 {
 	cout << "constructor" << endl;
 }
 
-StopwWatch::~StopWatch()
+StopWatch::~StopWatch()
 {
 	cout << "destructor" << endl;
 }
 
-void StopwWatch::start()
+void StopWatch::start()
 {
 }
 
-void StopwWatch::stop()
+void StopWatch::stop()
 {
 }
+
