@@ -24,4 +24,3 @@ private:
 
 };
 #endif // !STOPWATCH_HPP_
-

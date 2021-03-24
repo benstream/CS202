@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{24be1558-b008-492a-bf0b-535a3e6cbcec}</ProjectGuid>
+    <ProjectGuid>{d294bb90-b810-4cb1-9133-1be2dbf5a630}</ProjectGuid>
     <RootNamespace>Program1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="stopwatch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stopwatch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
