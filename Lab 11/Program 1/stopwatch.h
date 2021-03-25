@@ -1,5 +1,7 @@
 #include <iostream>
 #include <chrono>
+#include<algorithm>
+#include<random>
 using std::cout;
 using std::endl;
 

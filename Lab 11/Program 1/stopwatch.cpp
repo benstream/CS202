@@ -24,7 +24,7 @@ double StopWatch::start()
 		_StartTime = std::chrono::steady_clock::now();
 		_running = true;
 
-		return 2;
+		return 2; //2 means 
 	}
 
 }
@@ -35,7 +35,7 @@ double StopWatch::stop()
 
 		_EndTime = std::chrono::steady_clock::now();
 		_running = false;
-		return (double)std::chrono::duration_cast<std::chrono::milliseconds>(_EndTime - _StartTime).count();
+		return (double)std::chrono::duration_cast<std::chrono::milliseconds>(_EndTime - _StartTime).count(); //returning time in ms and doubleifying the long longs
 	}
 	else return 0;
 }
