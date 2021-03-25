@@ -11,15 +11,16 @@ using std::endl;
 class StopWatch
 {
 public:
-	StopWatch(); //will start timer
+	StopWatch(); //initialize timer
 	~StopWatch(); // destructor
-	double start(); //stops current timer and restarts as well as saves time.
+	double start(); //starts timer if running restarts timer and records the time.
 	double stop(); // stops timer and records time
 
 
 private:
-	//double _time;
-
+	std::chrono::time_point<std::chrono::steady_clock> _StartTime;
+	std::chrono::time_point<std::chrono::steady_clock> _EndTime;
+	bool _running = false; 
 
 
 };
