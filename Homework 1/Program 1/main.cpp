@@ -1,60 +1,28 @@
-#include <iostream>
-#include <chrono>
-using std::cout;
-using std::endl;
+#include "stopwatch.h"
 
 
 
-#ifndef STOPWATCH_HPP_
-#define STOPWATCH_HPP_
 
-class StopWatch
-{
-public:
-	StopWatch(); //will start timer
-	~StopWatch(); // destructor
-	double start(); //stops current timer and restarts as well as saves time.
-	double stop(); // stops timer and records time
-
-
-private:
-	//double _time;
-
-
-
-};
-#endif // !STOPWATCH_HPP_
+int main() {
+	StopWatch Default;
+	StopWatch TotalTime;
+	TotalTime.start();
+	Default.start();
+	for (int i = 0; i < 100; i++) {
+		
+		
+		for (int i = 0; i < 100; i++) { cout << "x"; }
+		cout << endl;
+		cout << Default.start() << std::endl;
+	}
+	for (int i = 0; i < 100; i++) {
 
 
-StopWatch::StopWatch()
-{
-
-	std::cout << "constructor" << std::endl;
-
-}
-
-StopWatch::~StopWatch()
-{
-	std::cout << "destructor" << std::endl;
-}
-
-double StopWatch::start()
-{
-	return 3;
-}
-
-double StopWatch::stop()
-{
-	return 3;
-}
-
-
-
-int main(int argc, const char** argv) {
-
-
-	StopWatch Default();
-	Default();
-
-
+		for (int i = 0; i < 100; i++) { cout << "x"; }
+		
+	}
+	cout << endl;
+	cout << Default.stop() << endl;
+	
+	cout << TotalTime.stop() << endl;
 }
