@@ -2,7 +2,7 @@
 using std::cout;
 using std::endl;
 
-StopWatch::StopWatch()
+StopWatch::StopWatch() :_running(false)
 {
 	cout << "constructor" << endl;
 
