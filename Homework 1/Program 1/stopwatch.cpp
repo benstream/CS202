@@ -1,13 +1,16 @@
 #include "stopwatch.h"
+using std::cout;
+using std::endl;
+
 StopWatch::StopWatch()
 {
-	std::cout << "constructor" << std::endl;
+	cout << "constructor" << endl;
 
 }
 
 StopWatch::~StopWatch()
 {
-	std::cout << "destructor" << std::endl;
+	cout << "destructor" << endl;
 }
 
 double StopWatch::start()
@@ -24,7 +27,7 @@ double StopWatch::start()
 		_StartTime = std::chrono::steady_clock::now();
 		_running = true;
 
-		return 2; //2 means 
+		return 2; //2 means clock has been retagged
 	}
 
 }

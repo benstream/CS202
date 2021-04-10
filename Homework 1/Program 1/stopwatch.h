@@ -2,8 +2,8 @@
 #include <chrono>
 #include<algorithm>
 #include<random>
-using std::cout;
-using std::endl;
+#include <vector>
+
 
 
 
@@ -15,7 +15,7 @@ class StopWatch
 public:
 	StopWatch(); //initialize timer
 	~StopWatch(); // destructor
-	double start(); //starts timer if running restarts timer and records the time.
+	double start(); //starts timer, if running restarts timer and records the time.
 	double stop(); // stops timer and records time
 
 
