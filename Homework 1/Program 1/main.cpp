@@ -42,7 +42,7 @@ int main(int argc, const char** argv) {
 	//TotalTime.start();
 	//Default.start();
 
-	auto a = makeVector(0, 100000); // creates a vector length 10 with random values 0-10
+	auto a = makeVector(0, 10000000); // creates a vector length 10 with random values 0-10
 	//auto b = makeVector(0, 100);// creates a vector length 10^2 with random values 0-10^2
 	//auto c = makeVector(0, 1000);// creates a vector length 10^3 with random values 0-10^3
 	//auto d = makeVector(0, 10000);// creates a vector length 10^4 with random values 0-10^4
@@ -53,8 +53,8 @@ int main(int argc, const char** argv) {
 
 	Time.start();
 	sort(a.begin(), a.end(), [](int a, int b) {return a > b; }); // Sorts by decending order
-	cout << Time.stop() << endl;
-	
+	cout << Time.start() << endl;
+	//binary_search(a.begin(), a.end(), [](int a, int b) {return a > b; }); // Sorts by decending order
 	
 	//cout << Default.stop() << endl;
 	

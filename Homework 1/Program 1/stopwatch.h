@@ -17,8 +17,8 @@ public:
 	~StopWatch(); // destructor
 	double start(); //starts timer, if running restarts timer and records the time.
 	double stop(); // stops timer and records time
-	double startSec(); //starts timer, if running restarts timer and records the time.
-	double stopSec(); // stops timer and records time
+	double startSec(); //starts timer, if running restarts timer and records the time in Seconds!
+	double stopSec(); // stops timer and records time in Seconds!
 
 private:
 	std::chrono::time_point<std::chrono::steady_clock> _StartTime;

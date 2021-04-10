@@ -14,7 +14,7 @@ StopWatch::~StopWatch()
 }
 
 double StopWatch::start()
-{
+{//Checks if stopwatch is running, if not sets the flag.
 	if (_running == false) {
 		_StartTime = std::chrono::steady_clock::now();
 		_running = true;
@@ -22,12 +22,9 @@ double StopWatch::start()
 	}
 	else
 	{
-		StopWatch::stop();
 		stop();
 		_StartTime = std::chrono::steady_clock::now();
 		_running = true;
-
-		return 2; //2 means clock has been retagged
 	}
 
 }
@@ -35,7 +32,6 @@ double StopWatch::start()
 double StopWatch::stop()
 {
 	if (_running == true) {
-
 		_EndTime = std::chrono::steady_clock::now();
 		_running = false;
 		return (double)std::chrono::duration_cast<std::chrono::milliseconds>(_EndTime - _StartTime).count(); //returning time in ms and doubleifying the long longs
@@ -52,12 +48,9 @@ double StopWatch::startSec()
 	}
 	else
 	{
-		//StopWatch::stopSec();
 		stopSec();
 		_StartTime = std::chrono::steady_clock::now();
 		_running = true;
-
-		return 2; //2 means clock has been retagged
 	}
 
 }
@@ -65,7 +58,6 @@ double StopWatch::startSec()
 double StopWatch::stopSec()
 {
 	if (_running == true) {
-
 		_EndTime = std::chrono::steady_clock::now();
 		_running = false;
 		return (double)std::chrono::duration_cast<std::chrono::seconds>(_EndTime - _StartTime).count(); //returning time in ms and doubleifying the long longs
