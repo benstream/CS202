@@ -26,10 +26,8 @@ int main() {
 
 	char quad[] = "The quadradic formula is -A plus or minus Square root of B squared minus 4AC all over 2 A";
 
-	for (auto i : quad)
-	{
-		std::cout << strdp(quad) << std::endl;
-	}
+	std::cout << strdp(quad) << std::endl;
+
 
 
 
