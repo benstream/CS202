@@ -18,7 +18,7 @@ char* strdp(const char* s) {
 // finds the first occurrence of the C - style string x in s.
 char* findx(const char* s, const char* x) {
 
-
+	return 0;
 
 }
 
@@ -28,7 +28,7 @@ int main() {
 
 	for (auto i : quad)
 	{
-		std::cout << strdup(quad) << std::endl;
+		std::cout << strdp(quad) << std::endl;
 	}
 
 
