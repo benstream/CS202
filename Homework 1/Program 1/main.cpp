@@ -43,7 +43,7 @@ int main(int argc, const char** argv) {
 	
 	//Run through 10, 100, 1k, 10k, 100k, 1m, 10m, 100m, 1b
 	int lower_bound = 0;
-	int upper_bound = 100000000;
+	int upper_bound = 10;
 
 	{StopWatch SortTime;
 	cout << "Default Sort" << endl;
