@@ -7,7 +7,8 @@
 
 
 //that copies a C-style string into memory it allocate dynamically(using new).
-char* strdup(const char* s) {
+//removed 'u' in strpup because the defined function is depreciated
+char* strdp(const char* s) {
 	char* tempcopy = new char; 
 	tempcopy = (char*)s;
 	return tempcopy;
