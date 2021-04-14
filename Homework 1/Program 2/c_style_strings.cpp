@@ -17,8 +17,8 @@ char* strdp(const char* s) {
 
 // finds the first occurrence of the C - style string x in s.
 char* findx(const char* s, const char* x) {
-	const char* pos = strdp(s); //pos is to keep track of our progress through s
-	const char* search = strdp(x);
+	const char* pos = s; //pos is to keep track of our progress through s
+	const char* search = x;
 		
 	while (*s && *search) {
 		if(*search == *s){
@@ -35,18 +35,18 @@ char* findx(const char* s, const char* x) {
 	if (*s == '\0' && *search) {
 		printf("%s not found.\n",x);
 		pos = 0; 
+		return (char*)"No match";
 	}
 	printf("%s is found in ", x);
 	return (char*)pos;
 }
 
 int main() {
-	const char quadradic[]= "-A";
+	const char quadradic[]= "4AC";
 	const char quad[] = "The quadradic formula is -A plus or minus Square root of B squared minus 4AC all over 2 A";
-	//printf(quad);
 	
 	std::cout << findx(quad, quadradic) << std::endl;
-	//std::cout << strdp(quad) << std::endl;
+	std::cout << strdp(quad) << std::endl;
 
 
 
