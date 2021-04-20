@@ -142,7 +142,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stopwatch.cpp" />
-    <ClCompile Include="timeit2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stopwatch.h" />
