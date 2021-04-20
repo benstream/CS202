@@ -142,9 +142,18 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stopwatch.cpp" />
+    <ClCompile Include="timeit2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stopwatch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="books\emma.txt" />
+    <Text Include="books\greatgatsby.txt" />
+    <Text Include="books\peterpan.txt" />
+    <Text Include="books\scarletletter.txt" />
+    <Text Include="books\treasureisland.txt" />
+    <Text Include="books\words.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

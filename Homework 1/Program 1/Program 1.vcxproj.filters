@@ -21,10 +21,33 @@
     <ClCompile Include="stopwatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="timeit2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stopwatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="books\emma.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="books\greatgatsby.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="books\peterpan.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="books\scarletletter.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="books\treasureisland.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="books\words.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
