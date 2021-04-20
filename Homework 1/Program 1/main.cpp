@@ -50,6 +50,7 @@ std::vector<std::string> vectoredBook(const char* fileName) {
 	return v;
 }
 
+//Puts a book .txt into a list
 std::list<std::string> listedBook(const char* fileName) {
 	std::ifstream book;
 	book.open(fileName); // Contains over 400k Words of the English Language!
@@ -65,6 +66,38 @@ std::list<std::string> listedBook(const char* fileName) {
 	return l;
 }
 
+//Puts a book .txt into a deque
+std::deque<std::string> dequedBook(const char* fileName){
+	std::ifstream book;
+	book.open(fileName); // Contains over 400k Words of the English Language!
+
+	std::deque<std::string> d;
+	std::string word;
+
+	while (book >> word) {
+		book >> word;
+		d.push_back(word);
+	}
+	book.close();
+	return d;
+}
+
+//Searches Vector
+bool searchVector(std::vector<std::string>&vector,std::string &search) {
+
+	std::vector<std::string>::iterator it = std::find(vector.begin(), vector.end(), search);
+	if (it != vector.end()) {
+		std::cout << "Found " << search << std::endl; // can be removed after testing
+		return true;
+	}
+	else {
+		std::cout << "Word not found" << std::endl; // can be removed after testing
+		return false;
+	}
+
+}
+
+//Searches List
 bool searchList(std::list<std::string>& list, std::string& search) {
 
 	std::list<std::string>::iterator it = std::find(list.begin(), list.end(), search);
@@ -79,12 +112,11 @@ bool searchList(std::list<std::string>& list, std::string& search) {
 
 }
 
+//Searches Deque
+bool searchDeque(std::deque<std::string>& deque, std::string& search) {
 
-
-bool searchVector(std::vector<std::string>&vector,std::string &search) {
-
-	std::vector<std::string>::iterator it = std::find(vector.begin(), vector.end(), search);
-	if (it != vector.end()) {
+	std::deque<std::string>::iterator it = std::find(deque.begin(), deque.end(), search);
+	if (it != deque.end()) {
 		std::cout << "Found " << search << std::endl; // can be removed after testing
 		return true;
 	}
@@ -93,6 +125,21 @@ bool searchVector(std::vector<std::string>&vector,std::string &search) {
 		return false;
 	}
 
+}
+
+//Sorts Vector
+void sortVector(std::vector<std::string> v) {
+	std::sort(v.begin(), v.end(), [](std::string a, std::string b) {return a > b; });
+}
+
+//Sorts List
+void sortList(std::list<std::string> l) {
+	l.sort([](std::string a, std::string b) {return a > b; });
+}
+
+//Sorts Deque
+void sortDeque(std::deque<std::string> d) {
+	std::sort(d.begin(), d.end(), [](std::string a, std::string b) {return a > b; });
 }
 
 //Finds random word
@@ -196,10 +243,31 @@ int main(int argc, const char** argv) {
 		cout << vbookReadTime.start() << endl;
 		auto treasureIslandV = vectoredBook("books/treasureIsland.txt");
 		cout << vbookReadTime.start() << endl;
+		searchVector(peterPanV, randComparisonWord);
+		cout << vbookReadTime.start() << endl;
+		searchVector(emmaV, randComparisonWord);
+		cout << vbookReadTime.start() << endl;
+		searchVector(greatGatsbyV, randComparisonWord);
+		cout << vbookReadTime.start() << endl;
+		searchVector(scarletLetterV, randComparisonWord);
+		cout << vbookReadTime.start() << endl;
 		searchVector(treasureIslandV, randComparisonWord);
-		cout << vbookReadTime.start() << endl; }
+		cout << vbookReadTime.start() << endl;
+		sortVector(peterPanV);
+		cout << vbookReadTime.start() << endl;
+		sortVector(emmaV);
+		cout << vbookReadTime.start() << endl;
+		sortVector(greatGatsbyV);
+		cout << vbookReadTime.start() << endl;
+		sortVector(scarletLetterV);
+		cout << vbookReadTime.start() << endl;
+		sortVector(treasureIslandV);
+		cout << vbookReadTime.start() << endl;
+		}
+		
 		{StopWatch lbookReadTime;
-			lbookReadTime.start();
+		cout << "Testing Book Lists" << endl;
+		lbookReadTime.start();
 		auto peterPanL = listedBook("books/peterpan.txt");
 		cout << lbookReadTime.start() << endl;
 		auto emmaL = listedBook("books/emma.txt");
@@ -210,10 +278,61 @@ int main(int argc, const char** argv) {
 		cout << lbookReadTime.start() << endl;
 		auto treasureIslandL = listedBook("books/treasureIsland.txt");
 		cout << lbookReadTime.start() << endl;
+		searchList(peterPanL, randComparisonWord);
+		cout << lbookReadTime.start() << endl;
+		searchList(emmaL, randComparisonWord);
+		cout << lbookReadTime.start() << endl;
+		searchList(greatGatsbyL, randComparisonWord);
+		cout << lbookReadTime.start() << endl;
+		searchList(scarletLetterL, randComparisonWord);
+		cout << lbookReadTime.start() << endl;
 		searchList(treasureIslandL, randComparisonWord);
 		cout << lbookReadTime.start() << endl;
-		
-		
+		sortList(peterPanL);
+		cout << lbookReadTime.start() << endl;
+		sortList(emmaL);
+		cout << lbookReadTime.start() << endl;
+		sortList(greatGatsbyL);
+		cout << lbookReadTime.start() << endl;
+		sortList(scarletLetterL);
+		cout << lbookReadTime.start() << endl;
+		sortList(treasureIslandL);
+		cout << lbookReadTime.start() << endl;
+		}
+
+		{StopWatch dbookReadTime;
+		cout << "Testing Book Deques" << endl;
+		dbookReadTime.start();
+		auto peterPanD = dequedBook("books/peterpan.txt");
+		cout << dbookReadTime.start() << endl;
+		auto emmaD = dequedBook("books/emma.txt");
+		cout << dbookReadTime.start() << endl;
+		auto greatGatsbyD = dequedBook("books/greatgatsby.txt");
+		cout << dbookReadTime.start() << endl;
+		auto scarletLetterD = dequedBook("books/scarletletter.txt");
+		cout << dbookReadTime.start() << endl;
+		auto treasureIslandD = dequedBook("books/treasureIsland.txt");
+		cout << dbookReadTime.start() << endl;
+		searchDeque(peterPanD, randComparisonWord);
+		cout << dbookReadTime.start() << endl;
+		searchDeque(emmaD, randComparisonWord);
+		cout << dbookReadTime.start() << endl;
+		searchDeque(greatGatsbyD, randComparisonWord);
+		cout << dbookReadTime.start() << endl;
+		searchDeque(scarletLetterD, randComparisonWord);
+		cout << dbookReadTime.start() << endl;
+		searchDeque(treasureIslandD, randComparisonWord);
+		cout << dbookReadTime.start() << endl;
+		sortDeque(peterPanD);
+		cout << dbookReadTime.start() << endl;
+		sortDeque(emmaD);
+		cout << dbookReadTime.start() << endl;
+		sortDeque(greatGatsbyD);
+		cout << dbookReadTime.start() << endl;
+		sortDeque(scarletLetterD);
+		cout << dbookReadTime.start() << endl;
+		sortDeque(treasureIslandD);
+		cout << dbookReadTime.start() << endl;
 		}
 		return 0;
 
