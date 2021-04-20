@@ -34,6 +34,7 @@ vector<int> makeVector(int x,int y) {
 	return v;
 }
 
+//Puts a book .txt into a vector
 std::vector<std::string> vectoredBook(const char* fileName) {
 	std::ifstream book;
 	book.open(fileName); // Contains over 400k Words of the English Language!
@@ -48,6 +49,22 @@ std::vector<std::string> vectoredBook(const char* fileName) {
 	book.close();
 	return v;
 }
+
+bool searchVector(std::vector<std::string>&vector,std::string &search) {
+
+	std::vector<std::string>::iterator it = std::find(vector.begin(), vector.end(), search);
+	if (it != vector.end()) {
+		std::cout << "Found " << search << std::endl;
+		return true;
+	}
+	else {
+		std::cout << "Word not found" << std::endl;
+		return false;
+	}
+
+}
+
+//Finds random word
 std::string randomWord() { // Returns a random word to find in book
 	auto randNum = randGenerator();
 
@@ -75,11 +92,8 @@ std::string randomWord() { // Returns a random word to find in book
 
 
 int main(int argc, const char** argv) {
-	auto peterPan = vectoredBook("books/peterpan.txt");
-	auto emma = vectoredBook("books/emma.txt");
-	auto greatGatsby = vectoredBook("books/greatgatsby.txt");
-	auto scarletLetter = vectoredBook("books/scarletletter.txt");
-	auto treasureIsland = vectoredBook("books/treasureIsland.txt");
+	
+	std::string randComparisonWord = randomWord();
 	auto comparison = makeVector(0, 33);
 	cout << randomWord() << endl;
 	
@@ -134,10 +148,26 @@ int main(int argc, const char** argv) {
 			cout << ShuffleTime.stop() << endl;
 		}
 		}
+		return 0;
 	} 
 	if (true) {
 
 		StopWatch bookReadTime;
+		cout << "Testing Book Vectors" << endl;
+		bookReadTime.start();
+		auto peterPanV = vectoredBook("books/peterpan.txt");
+		cout << bookReadTime.start() << endl;
+		auto emma = vectoredBook("books/emma.txt");
+		cout << bookReadTime.start() << endl;
+		auto greatGatsbyV = vectoredBook("books/greatgatsby.txt");
+		cout << bookReadTime.start() << endl;
+		auto scarletLetterV = vectoredBook("books/scarletletter.txt");
+		cout << bookReadTime.start() << endl;
+		auto treasureIslandV = vectoredBook("books/treasureIsland.txt");
+		cout << bookReadTime.start() << endl;
+		searchVector(treasureIslandV, randComparisonWord);
+		cout << bookReadTime.start() << endl;
+		return 0;
 
 
 	}
