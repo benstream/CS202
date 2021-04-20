@@ -65,6 +65,22 @@ std::list<std::string> listedBook(const char* fileName) {
 	return l;
 }
 
+bool searchList(std::list<std::string>& list, std::string& search) {
+
+	std::list<std::string>::iterator it = std::find(list.begin(), list.end(), search);
+	if (it != list.end()) {
+		std::cout << "Found " << search << std::endl; // can be removed after testing
+		return true;
+	}
+	else {
+		std::cout << "Word not found" << std::endl; // can be removed after testing
+		return false;
+	}
+
+}
+
+
+
 bool searchVector(std::vector<std::string>&vector,std::string &search) {
 
 	std::vector<std::string>::iterator it = std::find(vector.begin(), vector.end(), search);
