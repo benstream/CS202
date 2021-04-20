@@ -50,15 +50,30 @@ std::vector<std::string> vectoredBook(const char* fileName) {
 	return v;
 }
 
+std::list<std::string> listedBook(const char* fileName) {
+	std::ifstream book;
+	book.open(fileName); // Contains over 400k Words of the English Language!
+
+	std::list<std::string> l;
+	std::string word;
+
+	while (book >> word) {
+		book >> word;
+		l.push_back(word);
+	}
+	book.close();
+	return l;
+}
+
 bool searchVector(std::vector<std::string>&vector,std::string &search) {
 
 	std::vector<std::string>::iterator it = std::find(vector.begin(), vector.end(), search);
 	if (it != vector.end()) {
-		std::cout << "Found " << search << std::endl;
+		std::cout << "Found " << search << std::endl; // can be removed after testing
 		return true;
 	}
 	else {
-		std::cout << "Word not found" << std::endl;
+		std::cout << "Word not found" << std::endl; // can be removed after testing
 		return false;
 	}
 
@@ -152,21 +167,38 @@ int main(int argc, const char** argv) {
 	} 
 	if (true) {
 
-		StopWatch bookReadTime;
+		{StopWatch vbookReadTime;
 		cout << "Testing Book Vectors" << endl;
-		bookReadTime.start();
+		vbookReadTime.start();
 		auto peterPanV = vectoredBook("books/peterpan.txt");
-		cout << bookReadTime.start() << endl;
-		auto emma = vectoredBook("books/emma.txt");
-		cout << bookReadTime.start() << endl;
+		cout << vbookReadTime.start() << endl;
+		auto emmaV = vectoredBook("books/emma.txt");
+		cout << vbookReadTime.start() << endl;
 		auto greatGatsbyV = vectoredBook("books/greatgatsby.txt");
-		cout << bookReadTime.start() << endl;
+		cout << vbookReadTime.start() << endl;
 		auto scarletLetterV = vectoredBook("books/scarletletter.txt");
-		cout << bookReadTime.start() << endl;
+		cout << vbookReadTime.start() << endl;
 		auto treasureIslandV = vectoredBook("books/treasureIsland.txt");
-		cout << bookReadTime.start() << endl;
+		cout << vbookReadTime.start() << endl;
 		searchVector(treasureIslandV, randComparisonWord);
-		cout << bookReadTime.start() << endl;
+		cout << vbookReadTime.start() << endl; }
+		{StopWatch lbookReadTime;
+			lbookReadTime.start();
+		auto peterPanL = listedBook("books/peterpan.txt");
+		cout << lbookReadTime.start() << endl;
+		auto emmaL = listedBook("books/emma.txt");
+		cout << lbookReadTime.start() << endl;
+		auto greatGatsbyL = listedBook("books/greatgatsby.txt");
+		cout << lbookReadTime.start() << endl;
+		auto scarletLetterL = listedBook("books/scarletletter.txt");
+		cout << lbookReadTime.start() << endl;
+		auto treasureIslandL = listedBook("books/treasureIsland.txt");
+		cout << lbookReadTime.start() << endl;
+		searchList(treasureIslandL, randComparisonWord);
+		cout << lbookReadTime.start() << endl;
+		
+		
+		}
 		return 0;
 
 
