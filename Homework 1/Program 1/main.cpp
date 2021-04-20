@@ -34,7 +34,20 @@ vector<int> makeVector(int x,int y) {
 	return v;
 }
 
+std::vector<std::string> vectoredBook(const char* fileName) {
+	std::ifstream book;
+	book.open(fileName); // Contains over 400k Words of the English Language!
 
+	std::vector<std::string> v;
+	std::string word;
+	
+	while (book >> word) {
+		book >> word;
+		v.push_back(word);
+	}
+	book.close();
+	return v;
+}
 std::string randomWord() { // Returns a random word to find in book
 	auto randNum = randGenerator();
 
@@ -62,7 +75,11 @@ std::string randomWord() { // Returns a random word to find in book
 
 
 int main(int argc, const char** argv) {
-	
+	auto peterPan = vectoredBook("books/peterpan.txt");
+	auto emma = vectoredBook("books/emma.txt");
+	auto greatGatsby = vectoredBook("books/greatgatsby.txt");
+	auto scarletLetter = vectoredBook("books/scarletletter.txt");
+	auto treasureIsland = vectoredBook("books/treasureIsland.txt");
 	auto comparison = makeVector(0, 33);
 	cout << randomWord() << endl;
 	
