@@ -5,6 +5,10 @@ CS202
 */
 #include <iostream>
 
+
+
+
+
 void printPointer(int& i) {
     int* iptr = &i;
     // the unary * operator dereferences the pointer
@@ -29,10 +33,17 @@ void createStatic() {
     printPointer(s3);
 }
 
+void createFreeS() {
+    int* s = new int[1,1,1];
+    std::cout << "FREE STORAGE\n";
+    printPointer(s[1]);
+    printPointer(s[2]);
+    printPointer(s[3]);
+}
 
 int main() {
 
     createStack(); // Looks like decreasing, maybe create a function to evaluate for me
     createStatic(); //Look like increase
-
+    createFreeS();
 }
