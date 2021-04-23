@@ -1,7 +1,7 @@
 /*
 Benjamin Stream
 Cs202 
-value.cpp for HW2
+linked_list.h for HW2
 */
 
 #include <iostream>
