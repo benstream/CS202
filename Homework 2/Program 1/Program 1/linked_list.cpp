@@ -23,16 +23,21 @@ resources Legos("John", "Shelving", "Legos", 20, 40, 50);
 
 //QUEUE 
 TEST_CASE("ADDING TO QUEUE") {
+	int takeiSize = shop.size();
 	shop.push_back(Rocks);
-	CHECK(shop.size() != shop.size() - 1); // ensures increasing size 
+	CHECK(takeiSize != shop.size()); // ensures increasing size 
 	shop.push_back(Cheese);
-	CHECK(shop.size() != shop.size() - 1); // ensures increasing size 
+	CHECK(takeiSize != shop.size() - 1); // ensures increasing size 
 	
 }
 //DELETE QUEUE
 TEST_CASE() {
-
-
+	int takeiSize = shop.size();
+	shop.pop_front();
+	CHECK(takeiSize == shop.size() + 1); // ensures decreasing size
+	std::list<resources>::iterator it = shop.begin();
+	std::advance(it, 0);
+	CHECK(it->ownerName != Rocks.ownerName); // ensures the first element added is removed from queue
 }
 
 //FIRST IN LAST OUT
