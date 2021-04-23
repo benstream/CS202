@@ -11,3 +11,18 @@ void printPointer(int& i) {
     std::cout << "i = " << *iptr << "\n";
     std::cout << "& i = " << iptr << "\n" << std::endl;
 }
+
+void createStack(){
+    int s1 = 1, s2 = 1, s3 = 1;
+    printPointer(s1);
+    printPointer(s2);
+    printPointer(s3);
+
+}
+
+int main() {
+
+    createStack(); // Looks like decreasing, maybe create a function to evaluate for me
+
+
+}
