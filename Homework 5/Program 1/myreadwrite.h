@@ -1,4 +1,6 @@
-#include<istream>
+
+#ifndef MYREADWRITE_H
+#define MYREADWRITE_H
 #include <iostream>
 #include <fstream>
 
@@ -8,6 +10,8 @@ void myWrite(std::ofstream& ofile, const number &num) {
 	ofile.write(reinterpret_cast<const char*>(&num), sizeof(num));
 }
 template<typename number>
-void myRead(std::ofstream& ofile, const number &num) {
-	ofile.read(reinterpret_cast<const char*>(&num), sizeof(num));
+void myRead(std::ifstream& ifile, const number &num) {
+	ifile.read(reinterpret_cast<const char*>(&num), sizeof(num));
 }
+
+#endif //!MYREADWRITE_H
