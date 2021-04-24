@@ -5,26 +5,23 @@ using std::ostream;
 
 class Happy {
 	friend ostream& operator<<(ostream& os, const Happy& f);
+	friend ostream& operator+(const Happy& f, const Happy& f2);
 
 public:
 	Happy();
-	Happy(int x) :_fish(x) {};
+	Happy(const Happy&);
+	Happy(int z);
 	~Happy();
-	void setData(int x,int y) {
-		x = _fish;
-		y = _hours;
-	}
 	int getData();
-	
-	
-	void operaoperator + (const Happy & f, Happy f2) {};
+
+
+
+
 
 
 
 private:
-	int _fish; // fish caught
-	int _hours; // hours fishing
-	int totalFish; //total fish
-	int totalHours; //total hours
+	int _fish=0; // fish caught
+	int totalFish=0; //total fish
 };
 

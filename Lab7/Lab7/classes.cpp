@@ -5,10 +5,14 @@ Happy::Happy()
 	cout << "calling default constructor" << endl;
 }
 
-Happy::Happy(int x) :_fish(x)
+Happy::Happy(const Happy&)
 {
-	cout << "calling default constructor" << endl;
-	
+	cout << "Copy Constructor" << endl;
+}
+
+Happy::Happy(int z) :_fish(z)
+{
+	cout << "Assinging Int to _fish" << endl;
 }
 
 Happy::~Happy()
@@ -21,12 +25,16 @@ int Happy::getData()
 	return _fish;
 }
 
+
 ostream& operator<<(ostream& os, const Happy& f) {
 	return os << f._fish;
 }
 
-int Happy::operator+(const Happy& f,Happy f2) {
-	return 0;
+ostream& operator+(const Happy& f, const Happy& f2)
+{
+	return f._fish + f2._fish;
 }
+
+
 
 
