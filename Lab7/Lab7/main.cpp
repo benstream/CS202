@@ -4,6 +4,6 @@ int main() {
 		Happy h(6);
 		cout << f << " fish!" << endl;
 		cout << h << " fish!" << endl;
-		cout  << h + f << " fish!" << endl;
+		//cout  << h + f << " fish!" << endl;
 
 }

@@ -30,10 +30,10 @@ ostream& operator<<(ostream& os, const Happy& f) {
 	return os << f._fish;
 }
 
-ostream& operator+(const Happy& f, const Happy& f2)
-{
-	return f._fish + f2._fish;
-}
+//ostream& operator+(const Happy& f, const Happy& f2)
+//{
+//	return f._fish + f2._fish;
+//}
 
 
 
