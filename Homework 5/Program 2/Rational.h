@@ -59,12 +59,12 @@ private:
 };
 template <typename T>
 Rational<T>::Rational() {
-    std::cout << "Constructor!" << std::endl;
+   
 }
 
 template <typename T>
 Rational<T>::~Rational() {
-    std::cout << "Destructor!" << std::endl;
+
 }
 
 template <typename T>
@@ -116,10 +116,12 @@ template <typename T>
 Rational<T>& Rational<T>::operator*=(const Rational<T>& rhs) {
     _numerator *= rhs._numerator;
     _denominator *= rhs._denominator;
+    reduce();
     return *this;
 }
 template <typename T>
 Rational<T>& Rational<T>::operator/=(const Rational<T>& rhs) {
+   
     return *this *= {rhs._denominator, rhs._numerator};
 }
 template <typename T>
