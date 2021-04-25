@@ -6,7 +6,17 @@
 #include <numeric>
 
 template <typename T>
-Rational<T>::Rational<T>(int num, int den) : _numerator(num), _denominator(den) {
+Rational<T>::Rational() {
+    std::cout << "Constructor!" << std::endl;
+}
+
+template <typename T>
+Rational<T>::~Rational() {
+    std::cout << "Destructor!" << std::endl;
+}
+
+template <typename T>
+Rational<T>::Rational(T num,T den) : _numerator(num), _denominator(den) {
     reduce();
 }
 
@@ -43,7 +53,7 @@ void Rational<T>::reduce() {
 }
 template <typename T>
 Rational<T> operator-(const Rational<T>& lhs) {
-    return { -lhs._numerator, lhs._denominator };
+    return Rational<T>( -lhs._numerator, lhs._denominator);
 }
 template <typename T>
 Rational<T>& Rational<T>::operator-=(const Rational<T>& rhs) { //Canonical
@@ -62,17 +72,17 @@ Rational<T>& Rational<T>::operator/=(const Rational<T>& rhs) {
 }
 template <typename T>
 Rational<T> operator-(const Rational<T>& lhs, const Rational<T>& rhs) {
-    return lhs + -rhs;
+    return Rational<T>(lhs + -rhs);
 }
 template <typename T>
 // pass lhs by value because we were going to copy it anyway
 Rational<T> operator*(Rational<T> lhs, const Rational<T>& rhs) { //Canonical
-    return lhs *= rhs;
+    return Rational<T>(lhs *= rhs);
 }
 template <typename T>
 // pass lhs by value because we were going to copy it anyway
 Rational<T> operator/(Rational<T> lhs, const Rational<T>& rhs) { //Canonical
-    return lhs /= rhs;
+    return Rational<T>(lhs /= rhs);
 }
 template <typename T>
 Rational<T>& Rational<T>::operator++() {//prefix ++
@@ -108,7 +118,7 @@ bool operator!=(const Rational<T>& lhs, const Rational<T>& rhs) {//canonical
 }
 template <typename T>
 bool operator>(const Rational<T>& lhs, const Rational<T>& rhs) {//canonical
-    return rhs < lhs;
+    return (rhs < lhs);
 }
 template <typename T>
 bool operator<=(const Rational<T>& lhs, const Rational<T>& rhs) {//canonical
