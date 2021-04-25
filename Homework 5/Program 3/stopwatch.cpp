@@ -4,13 +4,12 @@ using std::endl;
 
 StopWatch::StopWatch() :_running(false)
 {
-	cout << "Timer constructor" << endl;
-
+	
 }
 
 StopWatch::~StopWatch()
 {
-	cout << "Timer destructor" << endl;
+
 }
 
 double StopWatch::start()

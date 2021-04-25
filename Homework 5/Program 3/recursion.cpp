@@ -5,6 +5,8 @@ recursion
 */
 #include <iostream>
 #include "stopwatch.h"
+
+StopWatch AckermansTimer;
 int fib(int n)
 {
     if (n == 0) return 0;
@@ -33,27 +35,39 @@ int fib_loop(int n) {
     }
     
 }
-int A(int m,int n) {
+int A(int m, int n) {
+   // std::cout << "A( " << m << " , " << n << ") = " << n + 1 << std::endl;
     if (m == 0) {
+        
         return n + 1;
     }
     else if (m > 0 && n == 0) {
         A(m - 1, 1);
     }
     else if (m > 0 && n > 0) {
+       
         A(m - 1, A(m, n - 1));
+
     }
+    
 }
 
 int main() {
+    std::cout <<"fib(20) Test:"<< fib(20) << std::endl;
+
+    std::cout <<"fib_loop(20) Test:"<< fib_loop(20) << std::endl;
     
 
     std::cout << "A's Numbers Test" << std::endl;
-    long long m = 0;
-    long long n = 0;
+   int m = 0;
+   int n = 1;
+   while (true) {
+       AckermansTimer.start();
+       std::cout <<"Ackerman Run: "<<m<<": " << A(m, 0) << std::endl;
+       std::cout <<"Time:"<< AckermansTimer.stop() << std::endl;
+       m++;
+   }
     
-    while (true) {
-        std::cout << A(m, n) << std::endl;
-        m++;
-    }
-}
+
+
+ }
